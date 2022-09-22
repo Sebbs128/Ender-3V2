@@ -540,7 +540,7 @@
  * Multiple extruders can be assigned to the same pin in which case
  * the fan will turn on when any selected extruder is above the threshold.
  */
-//视新板子是用哪个管脚来接风扇，比如为PAx，则在Configuration_adv.h中定义#define E0_AUTO_FAN_PIN PAx即可。 
+//视新板子是用哪个管脚来接风扇，比如为PAx，则在Configuration_adv.h中定义#define E0_AUTO_FAN_PIN PAx即可。
 //按新硬件原理图，假设用PC0接喉管风扇，改为#define E0_AUTO_FAN_PIN PC0，当喉管温度大于EXTRUDER_AUTO_FAN_TEMPERATURE时喉管风扇开启 --zy
 #define E0_AUTO_FAN_PIN PC0
 #define E1_AUTO_FAN_PIN -1
@@ -2316,7 +2316,7 @@
  *
  * Enable PARK_HEAD_ON_PAUSE to add the G-code M125 Pause and Park.
  */
-#define ADVANCED_PAUSE_FEATURE   
+#define ADVANCED_PAUSE_FEATURE
 #if ENABLED(ADVANCED_PAUSE_FEATURE)
   #define PAUSE_PARK_RETRACT_FEEDRATE         60  // (mm/s) Initial retract feedrate.
   #define PAUSE_PARK_RETRACT_LENGTH            2  // (mm) Initial retract.
@@ -3655,7 +3655,7 @@
  * Host Prompt Support enables Marlin to use the host for user prompts so
  * filament runout and other processes can be managed from the host side.
  */
-//#define HOST_ACTION_COMMANDS
+#define HOST_ACTION_COMMANDS
 #if ENABLED(HOST_ACTION_COMMANDS)
   //#define HOST_PROMPT_SUPPORT
   //#define HOST_START_MENU_ITEM  // Add a menu item that tells the host to start
