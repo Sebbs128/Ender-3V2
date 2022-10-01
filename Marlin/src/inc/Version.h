@@ -26,7 +26,7 @@
  */
 
 #ifndef SHORT_BUILD_VERSION
-  #define SHORT_BUILD_VERSION "V1.0.4"
+  #define SHORT_BUILD_VERSION "V1.0.4-20221001"
 #endif
 
 /**
@@ -43,7 +43,7 @@
  * version was tagged.
  */
 #ifndef STRING_DISTRIBUTION_DATE
-  #define STRING_DISTRIBUTION_DATE "2021-10-14"
+  #define STRING_DISTRIBUTION_DATE "2022-10-01"
 #endif
 
 /**

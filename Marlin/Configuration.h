@@ -143,7 +143,7 @@
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "Ender-3 V2" 
+#define CUSTOM_MACHINE_NAME "Ender-3 V2"
 
 
 
@@ -170,7 +170,7 @@
   //#define SINGLENOZZLE_STANDBY_FAN
 #endif
 /*
-    Auto off display  
+    Auto off display
     rock_20210728
 */
 #define ENABLE_AUTO_OFF_DISPLAY
@@ -536,7 +536,7 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
- 
+
 /*
       #define DEFAULT_Kp 14.49
       #define DEFAULT_Ki 0.96
@@ -544,7 +544,7 @@
 */
       #define DEFAULT_Kp 25.80
       #define DEFAULT_Ki 2.50
-      #define DEFAULT_Kd 66.64 
+      #define DEFAULT_Kd 66.64
    #endif
 #endif // PIDTEMP
 
@@ -586,7 +586,7 @@
   //#define DEFAULT_bedKp 10.00
   //#define DEFAULT_bedKi .023
   //#define DEFAULT_bedKd 305.4
-  //M303 C12 E-1 S100   
+  //M303 C12 E-1 S100
   #define DEFAULT_bedKp 198.96
   #define DEFAULT_bedKi 38.80
   #define DEFAULT_bedKd 680.25
@@ -725,7 +725,7 @@
 
 // Enable pullup for all endstops to prevent a floating state
 //#define ENDSTOPPULLUPS   //rock_20210728
-#if DISABLED(ENDSTOPPULLUPS)   
+#if DISABLED(ENDSTOPPULLUPS)
   // Disable ENDSTOPPULLUPS to set pullups individually
   //#define ENDSTOPPULLUP_XMAX
   //#define ENDSTOPPULLUP_YMAX
@@ -867,7 +867,7 @@
 如果发现打印机抖动很厉害，可能是因为加速度过大的原因，可以将第二行中的前两个数值改为3000 3000.
 行的默认速度数值改为1000 1000 。
 */
-// 屏蔽LIMITED_MAX_ACCEL_EDITING 使用DEFAULT_MAX_ACCELERATION 解决最大加速度界面Z轴不能大于100的bug 107011 -20211012 
+// 屏蔽LIMITED_MAX_ACCEL_EDITING 使用DEFAULT_MAX_ACCELERATION 解决最大加速度界面Z轴不能大于100的bug 107011 -20211012
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2  rock_20211014
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
   #define MAX_ACCEL_EDIT_VALUES       { 3000, 3000, 100, 10000 } // ...or, set your own edit limits
@@ -956,10 +956,10 @@
  * The probe replaces the Z-MIN endstop and is used for Z homing.
  * (Automatically enables USE_PROBE_FOR_Z_HOMING.)
  */
-#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
+// #define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
 
 // Force the use of the probe for Z-axis homing
-//#define USE_PROBE_FOR_Z_HOMING
+#define USE_PROBE_FOR_Z_HOMING
 
 /**
  * Z_MIN_PROBE_PIN
@@ -1013,7 +1013,7 @@
 /**
  * The BLTouch probe uses a Hall effect sensor and emulates a servo.
  */
-// #define BLTOUCH   //rock_20210827
+#define BLTOUCH   //rock_20210827
 
 /**
  * Touch-MI Probe by hotends.fr
@@ -1191,7 +1191,7 @@
 #define Z_PROBE_OFFSET_RANGE_MAX 10
 
 // Enable the M48 repeatability test to test probe accuracy
-//#define Z_MIN_PROBE_REPEATABILITY_TEST
+#define Z_MIN_PROBE_REPEATABILITY_TEST
 
 // Before deploy/stow pause for user confirmation
 //#define PAUSE_BEFORE_DEPLOY_STOW
@@ -1199,7 +1199,7 @@
   //#define PAUSE_PROBE_DEPLOY_WHEN_TRIGGERED // For Manual Deploy Allenkey Probe
 #endif
 
-/** 
+/**
  * Enable one or more of the following if probing seems unreliable.
  * Heaters and/or fans can be disabled during probing to minimize electrical
  * noise. A delay can also be added to allow noise and vibration to settle.
@@ -1215,7 +1215,7 @@
 /*探针时还可以加一个延时和关闭风扇，进一步减少侧脸干扰。*/
 //#define PROBING_FANS_OFF          // Turn fans off when probing
 //#define PROBING_STEPPERS_OFF      // Turn steppers off (unless needed to hold position) when probing
-//#define DELAY_BEFORE_PROBING 200  // (ms) To prevent vibrations from triggering piezo sensors
+#define DELAY_BEFORE_PROBING 200  // (ms) To prevent vibrations from triggering piezo sensors
 
 // Require minimum nozzle and/or bed temperature for probing
 //#define PREHEAT_BEFORE_PROBING
@@ -1297,7 +1297,7 @@
 #define X_MIN_POS 0
 #define Y_MIN_POS 0  //-10  rock_20210713
 #define Z_MIN_POS 0
-#define X_MAX_POS X_BED_SIZE 
+#define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
 #define Z_MAX_POS 250       //250
 
@@ -1348,7 +1348,7 @@
   #define FIL_RUNOUT_ENABLED_DEFAULT true // Enable the sensor on startup. Override with M412 followed by M500.
   #define NUM_RUNOUT_SENSORS   1          // Number of sensors, up to one per extruder. Define a FIL_RUNOUT#_PIN for each.
 
-  #define FIL_RUNOUT_STATE     LOW  //HIGH //      // Pin state indicating that filament is NOT present. 
+  #define FIL_RUNOUT_STATE     LOW  //HIGH //      // Pin state indicating that filament is NOT present.
   //#define FIL_RUNOUT_PULLUP               // Use internal pullup for filament runout pins.
   #define FIL_RUNOUT_PULLDOWN           // Use internal pulldown for filament runout pins.
   //#define WATCH_ALL_RUNOUT_SENSORS      // Execute runout script on any triggering sensor, not only for the active extruder.
@@ -1447,7 +1447,7 @@
 //#define AUTO_BED_LEVELING_LINEAR
 // #define AUTO_BED_LEVELING_BILINEAR
 
-//#define AUTO_BED_LEVELING_UBL
+#define AUTO_BED_LEVELING_UBL
 //#define MESH_BED_LEVELING
 
 /**
@@ -1456,7 +1456,7 @@
  * leveling immediately after G28.
  */
 #define RESTORE_LEVELING_AFTER_G28
-//#define ENABLE_LEVELING_AFTER_G28
+// #define ENABLE_LEVELING_AFTER_G28
 
 /**
  * Auto-leveling needs preheating
@@ -1497,12 +1497,12 @@
   /**
    * Enable the G26 Mesh Validation Pattern tool.
    */
-  //#define G26_MESH_VALIDATION
+  #define G26_MESH_VALIDATION
   #if ENABLED(G26_MESH_VALIDATION)
     #define MESH_TEST_NOZZLE_SIZE    0.4  // (mm) Diameter of primary nozzle.
     #define MESH_TEST_LAYER_HEIGHT   0.2  // (mm) Default layer height for G26.
-    #define MESH_TEST_HOTEND_TEMP  205    // (°C) Default nozzle temperature for G26.
-    #define MESH_TEST_BED_TEMP      60    // (°C) Default bed temperature for G26.
+    #define MESH_TEST_HOTEND_TEMP  210    // (°C) Default nozzle temperature for G26. (Set for PLA+)
+    #define MESH_TEST_BED_TEMP      65    // (°C) Default bed temperature for G26.
     #define G26_XY_FEEDRATE         20    // (mm/s) Feedrate for G26 XY moves.
     #define G26_XY_FEEDRATE_TRAVEL 100    // (mm/s) Feedrate for G26 XY travel moves.
     #define G26_RETRACT_MULTIPLIER   1.0  // G26 Q (retraction) used by default between mesh test elements.
@@ -1646,7 +1646,7 @@
 // - Move the Z probe (or nozzle) to a defined XY point before Z Homing.
 // - Prevent Z homing when the Z probe is outside bed area.
 //
-// #define Z_SAFE_HOMING
+#define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
   #define Z_SAFE_HOMING_X_POINT X_CENTER  // X point for Z homing
@@ -1742,21 +1742,21 @@
 #define EEPROM_PLR
 #if ENABLED(EEPROM_PLR)
   #define PLR_ADDR 800
-#endif 
+#endif
 
 #define EEPROM_DEMARCATE  //温度标定功能
 #if ENABLED(EEPROM_DEMARCATE)
   #define DEMARCATE_ADDR 1900  //标定数据保存地址
   #define DEMARCATE_NUMBER 4   //标定数据保存长度
 //温度标定的标准测试点
-  #define Tem_standard_10   10 
+  #define Tem_standard_10   10
   #define Tem_standard_25   25
   #define Tem_standard_35   35
   #define Tem_standard_40   40
   #define Tem_standard_50   50
 
 //温度标定边界
-  #define Tem_compens_value_10   0 //10 
+  #define Tem_compens_value_10   0 //10
   #define Tem_compens_value_25   20//25
   #define Tem_compens_value_35   30//35
   #define Tem_compens_value_40   45//40
@@ -1789,16 +1789,22 @@
 // Preheat Constants - Up to 5 are supported without changes
 //预设两个默认初始化参数默认是PLA和ABS的预设，串口屏不用设置这里。
 #define PREHEAT_1_LABEL       "PLA"
-#define PREHEAT_1_TEMP_HOTEND 200
-#define PREHEAT_1_TEMP_BED     60
+#define PREHEAT_1_TEMP_HOTEND 205
+#define PREHEAT_1_TEMP_BED     65
 #define PREHEAT_1_TEMP_CHAMBER 35
 #define PREHEAT_1_FAN_SPEED    255 // Value from 0 to 255
 
-#define PREHEAT_2_LABEL       "ABS"
-#define PREHEAT_2_TEMP_HOTEND 240
-#define PREHEAT_2_TEMP_BED    100
+#define PREHEAT_2_LABEL       "PLA+"
+#define PREHEAT_2_TEMP_HOTEND 205
+#define PREHEAT_2_TEMP_BED     65
 #define PREHEAT_2_TEMP_CHAMBER 35
 #define PREHEAT_2_FAN_SPEED    255 // Value from 0 to 255
+
+#define PREHEAT_3_LABEL       "ABS"
+#define PREHEAT_3_TEMP_HOTEND 240
+#define PREHEAT_3_TEMP_BED    100
+#define PREHEAT_3_TEMP_CHAMBER 35
+#define PREHEAT_3_FAN_SPEED    255 // Value from 0 to 255
 
 /**
  * Nozzle Park
@@ -2500,7 +2506,7 @@
 //#define ANYCUBIC_LCD_CHIRON
 #if EITHER(ANYCUBIC_LCD_I3MEGA, ANYCUBIC_LCD_CHIRON)
   #define LCD_SERIAL_PORT 3  // Default is 3 for Anycubic
- 
+
   //#define ANYCUBIC_LCD_DEBUG
 #endif
 
@@ -2833,6 +2839,6 @@
 //#define EDITABLE_SERVO_ANGLES
 
 
-// #define CREALITY_POWER_TO_CONTINUE  
+// #define CREALITY_POWER_TO_CONTINUE
 //超级电容断电续打功能,如果取消此宏，默认是将断电续打数据保存到SD的PLR文件中，逐层覆盖
 // #define CREALITY_ENDER3_2021   //Power to continue playing
